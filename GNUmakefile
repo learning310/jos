@@ -173,6 +173,9 @@ qemu-nox-gdb: $(IMAGES) pre-qemu
 	@echo "***"
 	$(QEMU) -nographic $(QEMUOPTS) -S
 
+debug: # syf: for vscode debug
+	$(QEMU) -S -s -hda $(OBJDIR)/kern/kernel.img -monitor stdio
+
 print-qemu:
 	@echo $(QEMU)
 
